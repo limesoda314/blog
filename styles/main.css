@@ -1,0 +1,118 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+:root {
+    --bg-color-1: black; 
+    --bg-color-2: darkgreen; 
+    --txt-color-1: white;
+    --txt-color-2: black; 
+    --color-1: green;
+    --color-2: lightblue; 
+    --color-3: yellow; 
+    --color-4: pink; 
+}
+
+.border {
+    border: solid;
+    border-color: white; 
+}
+header {
+    color: var(--txt-color-1);
+    background-color: var(--bg-color-2);
+    padding: 2.5rem; 
+    margin: 2.5rem; 
+    width: 100%; 
+    margin-left: 0; 
+    padding-left: 0; 
+    
+}
+
+body {
+    color: var(--txt-color-1);
+    background-color: var(--bg-color-1);
+    font-family: 'Space Mono', monospace;
+    margin-left: 0; 
+    
+}
+
+main {
+    padding: 5%;
+    margin: 5%; 
+    padding-top: 2rem;
+    margin-top: 2rem; 
+
+}
+
+article { 
+    padding-top: 2rem;
+    margin-top: 2rem; 
+}
+
+.wrapper {
+    display: flex; 
+    flex-direction: row;
+}
+
+.card-container {
+    width: 50%;
+    padding-top: 0;
+    margin-top: 0; 
+}
+
+.top-card {
+    font-size: 2rem;
+    width: 100%-10px;
+    padding: 10px; 
+    padding-top: 0;
+}
+
+.txt-card {
+    font-size: 1rem;
+    width: 100%-10px;
+    padding: 10px; 
+
+}
+
+.title-block {
+    font-size: 2rem;
+    width: 30%;
+    padding: 10px;
+
+}
+.txt-block {
+    font-size: 1rem; 
+    width: 70%;
+    padding: 10px;
+}
+
+.center {
+    text-align: center;
+}
+
+.shadow {
+    text-shadow: 2px 2px var(--color-3);
+}
+
+@media only screen and (max-width: 1000px) {
+    article { 
+        padding: 0;
+        margin: 0; 
+    }
+    .wrapper {
+        flex-direction: column;
+    }
+    .title-block {
+        width: 100%;
+    }
+    .txt-block {
+        width: 100%;
+    }
+
+    .card-container {
+        width: 100%;
+    }
+    .top-card {
+        width: 100%;
+    }
+    .txt-card {
+        width: 100%;    
+    }
