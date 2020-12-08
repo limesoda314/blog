@@ -1,0 +1,58 @@
+
+/*-----------------EXPERIMENTING WITH GRID------------------------------------*/
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /*fr stands for fraction, so 1 fraction of the space
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    */
+    grid-auto-rows: 100px; 
+    background-color: blue;
+    padding: 10px;
+    column-gap: 10px;
+    row-gap: 1em; 
+    /*
+    em - relative to the font size of it's direct or nearest parent
+            em is thus more customizable 
+    rem - relative to the html (root) font size
+    
+    */
+}
+
+.grid-item {
+    background-color: black;
+    border: solid green;
+    padding: 20px; 
+    text-align: center; 
+}
+
+.box1 {
+    background-color: orange;
+    grid-column-start: 1; 
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    /*Testin out nesting boxes*/
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.box2 {
+    background-color: greenyellow;
+    grid-column-start: 1;
+    grid-row-start: 3;
+    grid-row-end: 5; 
+}
+
+.nested {
+    background-color: yellowgreen; 
+    border: solid;
+    border-color: red; 
+}
+
+.nested1 {
+    grid-column-start: 1;
+    grid-column-end: 3; /*ends at the last place*/
+    grid-row-start: 2; 
+}
