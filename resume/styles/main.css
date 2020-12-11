@@ -1,8 +1,10 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
 :root {
-    --bg-color-1: black; 
-    --bg-color-2: rgb(4, 39, 4); 
+    --bg-color-1: rgb(43, 1, 1); 
+    --bg-color-1-lower: rgba(20, 20, 20, 0.87);
+    --bg-color-2: rgb(42, 136, 42); 
+    --bg-color-2-lower: rgba(42, 136, 42, 0.829); 
+    --bg-color-3: black;
     --txt-color-1: white;
     --txt-color-2: black; 
     --txt-color-3: rgb(199, 194, 194); 
@@ -10,22 +12,62 @@
     --color-2: lightblue; 
     --color-3: rgb(190, 143, 13); 
     --color-4: pink; 
+    --color-5: rgb(180, 11, 180); 
 }
 
+a {
+    color: var(--color-4);
+}
+a:visited {
+    color: var(--color-5)
+}
 .border {
     border: solid;
     border-color: white; 
 }
-header {
-    color: var(--txt-color-3);
-    background: linear-gradient(var(--bg-color-2), var(--bg-color-1));
-    padding: 2.5rem; 
-    margin: 2.5rem; 
-    width: 100%; 
-    margin-left: 0; 
-    padding-left: 0;
-    
+
+/*---------------START OF NAVBAR----------------------------*/
+#navbar {
+    overflow: hidden; /*prevents scroll bars from appearing even when necessary*/
+    background-color: var(--bg-color-3); 
+    border-top: solid;
+    border-color: var(--color-4);
+    z-index: 100;
 }
+
+#navbar a {
+    float: left; 
+    display: block; 
+    color: var(--color-4);
+    text-align: center;
+    padding: 14px;
+    text-decoration: none; /* gets rid of the underline in the links*/
+}
+#navbar a:hover {
+    color: var(--color-5);
+}
+
+/* use JS to add this class onto the navbar when it reaches scroll position*/
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%; 
+}
+
+.sticky + .content {
+    padding-top: 60px; 
+}
+
+/*-----------------END OF NAVBAR-------------------------*/
+
+.hero {
+    color: var(--txt-color-3);
+    background: linear-gradient(to bottom right, rgb(206, 2, 2), var(--color-3));
+    
+    width: 100%;
+    overflow: hidden; 
+}
+
 
 body {
     color: var(--txt-color-1);
@@ -34,6 +76,8 @@ body {
     margin-left: 0; 
     margin-top: 0;
     padding-top: 0;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 main {
@@ -49,12 +93,10 @@ article {
 }
 
 footer {
-    padding: 5%;
-    width: 100%;
-    padding-bottom: 0;
-    background: linear-gradient(black, red);
-
+    padding: 16px; 
+    background-color: var(--bg-color-1-lower);
 }
+
 .single-block {
     font-size: 2rem; 
     width: 100%-10px; 

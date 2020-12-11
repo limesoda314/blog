@@ -1,0 +1,83 @@
+
+<div style="background:white">
+    <embed src="pages/file.txt" style="width:100%; height:500px">
+</div>
+
+While using the <embeded> tag works, the color of the text will not change, meaning that I would have to make sure the background would work with black text. I believe this also means I can not style the text either. 
+    - can not change color of text 
+    - can not resize text 
+    - have to manual resize the embeded tag size (width can be set to 100%, however height needs to be manually set)
+    - given a scrollbar so would need to fix that later 
+    
+I should try using this with markdown text.
+
+
+
+
+
+
+
+Le module des boîtes flexibles, aussi appelé « flexbox », a été conçu comme un modèle de disposition unidimensionnel et comme une méthode permettant de distribuer l'espace entre des objets d'une interface ainsi que de les aligner. Dans cet article, nous verrons les fonctionnalités principales des flexbox que nous approfondirons ensuite dans d'autres articles.
+
+Lorsqu'on décrit les boîtes flexibles comme une méthode de disposition unidimensionnelle, on indique en fait que les flexbox gèrent une seule dimension à la fois : une ligne ou une colonne. Ce modèle est à comparer au modèle bidimensionnel de la disposition en grille (CSS Grid) qui contrôle à la fois les colonnes et les lignes.
+Les deux axes des boîtes flexibles
+
+Lorsqu'on travaille avec les boîtes flexibles, deux axes interviennent : l'axe principal (main axis en anglais) et l'axe secondaire (cross axis en anglais). L'axe principal est défini par la propriété flex-direction et l'axe secondaire est l'axe qui lui est perpendiculaire. Tout ce que nous manipulons avec les boîtes flexibles fera référence à ces axes.
+L'axe principal
+
+L'axe principal est défini par la propriété flex-direction qui peut prendre quatre valeurs :
+
+    row
+    row-reverse
+    column
+    column-reverse
+
+Si on choisit la valeur row ou row-reverse, l'axe principal sera aligné avec la direction « en ligne » (inline direction) (c'est la direction logique qui suit le sens d'écriture du document).
+
+If flex-direction is set to row the main axis runs along the row in the inline direction.
+
+Si on choisit la valeur column ou column-reverse, l'axe principal suivra la direction de bloc (block direction) et progressera le long de l'axe perpendiculaire au sens d'écriture.
+
+If flex-direction is set to column the main axis runs in the block direction.
+L'axe secondaire (cross axis)
+
+L'axe secondaire est perpendiculaire à l'axe principal. Ainsi, si flex-direction vaut row ou row-reverse, l'axe secondaire suivra l'axe des colonnes.
+
+If flex-direction is set to row then the cross axis runs in the block direction.
+
+Si l'axe principale est column ou column-reverse, l'axe secondaire suivra celui des lignes (horizontales).
+
+If flex-direction is set to column then the cross axis runs in the inline direction.
+
+Comprendre les liens entre les différents axes est crucial lorsqu'on commence à aligner/justifier des éléments flexibles sur un axe ou l'autre grâce aux fonctionnalités et propriétés des boîtes flexibles.
+Les lignes de début et de fin
+
+Une autre notion fondamentale est l'absence d'hypothèse sur le mode d'écriture du document. Pour les modèles de disposition précédents, CSS était fortement orienté vers les modes d'écritures de droite à gauche et de gauche à droite. Les modèles de disposition modernes permettent de gérer naturellement les différents modes d'écriture et ne reposent plus sur l'idée qu'une ligne de texte commencera en haut à gauche d'un document puis progressera vers la droite et que chaque nouvelle ligne apparaîtra sous la précédente.
+
+Nous verrons plus tard les détails des relations entre les spécifications des boîtes flexibles et celles des modes d'écriture. Toutefois, décrivons ici pourquoi on ne parlera plus de gauche ou de droite et de bas ou de haut lorsque nous évoquerons la direction dans laquelle s'organisent les éléments flexibles.
+
+Si flex-direction vaut row et que nous travaillons sur un document écrit en français, la ligne de début de l'axe principal sera située à gauche et la ligne de fin sera située à droite.
+
+Working in English the start edge is on the left.
+
+Si on travaille sur un document écrit dans une langue arabe, la ligne de début de l'axe principal sera à droite et la ligne de fin à gauche.
+
+The start edge in a RTL language is on the right.
+
+Dans les deux cas, la ligne de début de l'axe secondaire est située en haut et la ligne de fin de cet axe est située en bas car ces deux langues sont écrites horizontalement.
+
+Nous verrons qu'au fur et à mesure, il devient naturel de parler de début et de fin plutôt que de gauche et de droite. De plus, ce niveau d'abstraction sera utile pour comprendre d'autres méthodes de disposition comme les grilles CSS car il y est également utilisé.
+Le conteneur flexible
+
+La zone d'un document sujette au modèle de disposition flexbox est appelée un conteneur flexible. Pour créer un conteneur flexible, il faut que la valeur de la propriété display de cet élément soit flex ou inline-flex. Dès que c'est le cas, les éléments « enfants » directs deviennent des éléments flexibles (flex items). Comme pour les autres propriétés CSS, certaines valeurs initiales sont définies, aussi, lorsqu'on crée un conteneur flexible, tous les éléments flexibles se comporteront de la façon suivante :
+
+    Les éléments s'afficheront en lignes horizontales (la valeur par défaut de la propriété flex-direction est row).
+    Les éléments seront placés à partir de la ligne de début de l'axe principal.
+    Les éléments ne s'étireront pas le long de l'axe principal mais pourront se rétrécir si nécessaire.
+    Les éléments seront étirés le long de l'axe secondaire afin d'occuper l'espace sur cet axe.
+    La propriété flex-basis vaut auto.
+    La propriété flex-wrap vaut nowrap.
+
+Autrement dit, tous les éléments formeront une ligne en utilisant la taille de leur contenu. S'il y a plus d'éléments que le conteneur peut en contenir, ils ne formeront pas une nouvelle ligne mais dépasseront du conteneur. Si certains éléments sont plus grands (selon l'axe secondaire) que d'autres, tous les éléments s'étireront sur l'axe secondaire afin d'avoir la plus grande taille.
+
+Vous pouvez étudier l'exemple qui suit pour voir le résultat obtenu. N'hésitez pa à éditer les éléments ou à en ajouter d'autres pour tester ce comportement initial.

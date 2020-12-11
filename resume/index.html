@@ -6,22 +6,30 @@
 		<title>Hello!</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" href="styles/main.css"/>
-
     </head>
-    <nav> 
-        <p style="margin-left: 2rem">Hello!</p>
-    </nav>
-    <header>
-        <div class="center">
-            <p class="shadow" style="font-size: 5rem; color: white;">
-                Ann-Marina Miyaguchi
-            </p>
-            <p style="font-size: 2rem;">
-                Aspiring Software Engineer & <br> Beginner Web Developer
-            </p>
-        </div>
-    </header>
+
     <body class="fade-in">
+        <div class="hero">
+            <div class="center">
+                <p class="shadow" style="font-size: 5rem; color: white;">
+                    Ann-Marina Miyaguchi
+                </p>
+                <p style="font-size: 2rem;">
+                    Aspiring Software Engineer & <br> Beginner Web Developer
+                </p>
+            </div>
+        </div>
+
+
+        <div class="random-div"></div>
+        <!--USING JS ON THIS TO FIND THE NAVBAR BY ID-->
+        <div id="navbar">
+            <a href="../index.html">Home</a>
+            <a href="../pages/projects.html">Projects</a>
+            <a href="index.html">Resume</a>
+            <a style="float:right" href="../pages/blog.html">Blog</a>
+        </div>
+
         <main>
             <article class="wrapper">
                 <div class="title-block">
@@ -157,10 +165,15 @@
             </article>
             
         </main>
-        
+    <!-- CONTAINS THE JS FOR THE NAVBAR -->
+    <script defer src="../javascript/main.js"></script>
 
     </body>
     <footer>
+        <img style="float: right; height:3em; width: auto" src="../images/limesoda.png">
+        <p>
+            Ann Miyaguchi 2020 
+        </p>
         
-    </footer>
+    </footer> 
 </html>
