@@ -1,0 +1,13 @@
+.changing-background {
+    background: linear-gradient(to bottom right, red,blue);
+    animation-name: bg-change;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+}
+  
+@keyframes bg-change {
+    0%   {background: linear-gradient(to bottom right,red, blue);}
+    25%  {background: linear-gradient(to bottom right, blue, purple);}
+    50%  {background: linear-gradient(to bottom right, red, orange);}
+    100% {background: linear-gradient(to bottom right, yellow, green);}
+}
