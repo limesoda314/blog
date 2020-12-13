@@ -3,18 +3,18 @@
 
     <head>
         <meta charset="UTF-8">
-		<title>Hello!</title>
+		<title>Ann's Blog</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="stylesheet" href="styles/main.css"/>
+        <link rel="stylesheet" href="../styles/main.css"/>
     </head>
-    <body class="fade-in background-one">
-        <div class="hero">
+    <body class="fade-in">
+        <div class="hero-one hero">
             <div class="center">
                 <p class="shadow" style="font-size: 5rem; color: white;">
-                    Ann-Marina Miyaguchi
+                    Ann's Blog! 
                 </p>
                 <p style="font-size: 2rem;">
-                    Aspiring Software Engineer & <br> Beginner Web Developer
+                    Where I talk about everything <br> random
                 </p>
             </div>
         </div>
@@ -23,23 +23,33 @@
         <div class="random-div"></div>
         <!--USING JS ON THIS TO FIND THE NAVBAR BY ID-->
         <div id="navbar">
-            <a href="index.html" class="active">Home</a>
-            <a href="pages/projects.html">Projects</a>
-            <a href="resume/index.html">Resume</a>
-            <a style="float:right" href="pages/blog.html">Blog</a>
+            <a href="../index.html">Home</a>
+            <a href="../pages/projects.html">Projects</a>
+            <a href="../resume/index.html">Resume</a>
+            <a class="active" style="float:right" href="../pages/blog.html">Blog</a>
         </div>
 
         <main>
             <article>
+                <div class="tags">
+                    <a href="../pages/blog.html" class="tag-button">All</a>
+                    <a href="dev.html" class="tag-button">Dev</a>
+                    <a href="write-ups.html" class="tag-button">Write-ups</a>
+                    <a href="random.html" id="active" class="tag-button">Random</a>
+                </div> 
+
                 <div class="content">
                     <h3>Welcome to my blog!</h3>
+                    <time datetime="12-12-2020">DEC. 12, 2020</time>
+                    <a href="../tag/random.html">#Random</a><br> 
                     <p>
-                        Hello and thanks for taking a look at my new and improved blog!! xD 
+                        Hello and welcome to my new and improved blog!! I've only just recently finished up the design of the site, so the content is really lacking right now xD 
                     </p>
                 </div>
                <!--
                    Can add in multiple content divs 
                -->
+               
 
 
             </article>
@@ -51,18 +61,18 @@
                 <p>
                     You can find my old blog <a href="https://limesoda314.github.io/">here</a> <br> 
                     Feel free to contact me with my <a href="mailto:limesoda314@gmail.com">email</a>
-                    I'm always looking for friends so feel free to reach out and say hi :)
+                    I'm always looking for friends so don't hesitate to say hi :)
                 </p>
             </aside>
         </main>
-        
+
     <!-- CONTAINS THE JS FOR THE NAVBAR -->
-    <script defer src="javascript/main.js"></script>
+    <script defer src="../javascript/main.js"></script>
 
     </body>
 
     <footer>
-        <img style="float: right; height:3em; width: auto" src="images/limesoda.png">
+        <img style="float: right; height:3em; width: auto" src="../images/limesoda.png">
         <p>
             Ann Miyaguchi 2020 
         </p>

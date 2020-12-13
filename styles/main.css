@@ -65,6 +65,10 @@ a:visited {
     color: var(--color-5);
 }
 
+#navbar .active {
+    background-color:  rgb(182, 81, 182);
+}
+
 /* use JS to add this class onto the navbar when it reaches scroll position*/
 .sticky {
     position: fixed;
@@ -103,7 +107,7 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden; 
-    
+
 }
 
 main {
@@ -113,10 +117,11 @@ main {
     padding: 10%; 
     padding-top: 50px; 
 }
-
+/*------------Background CSS--------------------------*/
 .background-one {
     background-image: url("../images/two-limes.png");
     background-repeat: repeat;
+    
 }
 
 .background-two {
@@ -127,6 +132,22 @@ main {
     background: rgb(29, 70, 68);
 }
 
+/*-----------using this on the hero-------------*/
+.changing-background {
+    background: linear-gradient(to bottom right, red,blue);
+    animation-name: bg-change;
+    animation-duration: 12s;
+    animation-iteration-count: infinite;
+}
+  
+@keyframes bg-change {
+    0%   {background: linear-gradient(to bottom right, var(--bg-color-2-lower), var(--color-3))}
+    25%  {background: linear-gradient(to bottom right, rgb(65, 172, 65), rgb(59, 59, 245));}
+    50%  {background: linear-gradient(to bottom right, rgb(151, 150, 150), rgb(0, 2, 80));}
+    100% {background: linear-gradient(to bottom right, rgb(206, 2, 2), var(--color-3));}
+}
+
+/*------------------------------------------------------*/
 article {
     display: grid;
     grid-template-columns: 1fr; 
