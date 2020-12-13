@@ -22,71 +22,27 @@ a:visited {
     color: var(--color-5)
 }
 
-hr.style-one {
-    border:0;
-    height:0;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    border-bottom: 1px, solid rgba(255, 255, 255, 0.3);
-}
-
-hr.style-two {
-    padding: 0;
-    border: none;
-    border-top: medium double #333;
-    color: #333;
-    text-align: center;
-    }
-hr.style-two:after {
-content: "limesoda314";
-display: inline-block;
-position: relative;
-top: -0.7em;
-font-size: 1.5em;
-padding: 0 0.25em;
-background: white;
-}
-
-hr.style-three {
-    padding: 0; 
-    border: none; 
-    height: 1px; 
-    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
-    background-image: -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
-    background-image: -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
-    background-image: -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
-    color: #333; 
-    text-align: center;
-}
-
-hr.style-three:after {
-    content:" ";
+.tags {
     display: inline-block;
-    position: relative;
-    top: -2.1em;
-    font-size: 1.5em;
-    padding: 19px 1.75em;
-    background: url(../images/lime.png) no-repeat scroll center;
-    background-size: 40px 40px;
-    height: 60px;
-    }
-
-
-div.type-one {
-    height: 75px;
-    background: url(../images/lime.png) space scroll left; 
-    background-size: 40px;   
-    text-align: justify; 
+    padding: 50px; 
+    padding-left: 0; 
+}
+.tag-button, .tag-button:visited {
+    color: var(--color-1);
+    text-decoration: none;  
+    background-color: rgb(114, 214, 68);
+    padding: 10px 20px;
 }
 
-
-/* Should look a bit like peppermint 
-
-hr.style-four {
-    border-bottom: 2px dashed red; 
-    background: white;
-    
+.tag-button:hover {
+    color: var(--color-2);
+    background-color: rgb(45, 137, 241);
 }
-*/
+
+#active {
+    color: var(--color-2);
+    background-color: rgb(0, 119, 255);
+}
 
 /*---------------START OF NAVBAR----------------------------*/
 #navbar {
@@ -122,6 +78,7 @@ hr.style-four {
 
 /*-----------------END OF NAVBAR-------------------------*/
 
+/*-----------------START OF HERO--------------------------------------*/
 .hero {
     color: var(--txt-color-3);
     background: linear-gradient(to bottom right, var(--bg-color-2-lower), var(--color-3));
@@ -137,13 +94,16 @@ hr.style-four {
     background: linear-gradient(to bottom right, rgb(151, 150, 150), rgb(0, 2, 80));
 }
 
+/*------------------- END OF HERO ----------------------------------------------*/
+
 body {
     color: var(--txt-color-1);
     background: var(--bg-color-1);
     font-family: 'Space Mono', monospace;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+    overflow-x: hidden; 
+    
 }
 
 main {
@@ -152,36 +112,47 @@ main {
     column-gap: 10px;
     padding: 10%; 
     padding-top: 50px; 
+}
+
+.background-one {
     background-image: url("../images/two-limes.png");
     background-repeat: repeat;
 }
 
+.background-two {
+    background: rgb(78, 83, 95);
+}
+
+.background-three {
+    background: rgb(29, 70, 68);
+}
+
 article {
-    grid-template-columns: 1fr; 
     display: grid;
+    grid-template-columns: 1fr; 
     row-gap: 10px; 
-    background: var(--bg-color-1-lower); 
 }
 
 .content {
     padding: 1em; 
-    border: dashed; 
     color: white; 
     z-index: 1; 
+    height: auto; 
+    background: var(--bg-color-1-lower); 
 }
 
 aside {
     padding: 1em; 
-    background: var(--bg-color-1-lower);
-    border: dashed; 
+    background: var(--bg-color-1-lower); 
     color: white; 
     height: 500px; 
-
 }
 
 footer {
     padding: 16px; 
     background-color: var(--bg-color-1-lower);
+    height: 150px; 
+    width: 100%; 
 }
 
 /*------------------------CONVENIENT CLASSES------------------------------------*/
@@ -189,6 +160,10 @@ footer {
     border: 1px solid;
     border-color: white; 
 } 
+
+.border-dash {
+    border: dashed; 
+}
 .center {
     text-align: center;
 }
@@ -225,4 +200,5 @@ footer {
     aside {
         height: auto; 
     }
+    
 }
