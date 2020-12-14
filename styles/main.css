@@ -36,15 +36,20 @@ a:visited {
     border: none; 
 }
 .tags {
-    display: inline-block;
+    display: flex; 
+    flex-wrap: wrap; 
     padding: 50px; 
     padding-left: 0; 
 }
+
 .tag-button, .tag-button:visited {
     color: var(--color-1);
     text-decoration: none;  
     background-color: rgb(114, 214, 68);
     padding: 10px 20px;
+    margin: 5px; 
+    margin-left: 0; 
+    margin-right: 10px;
 }
 
 .tag-button:hover {
@@ -134,10 +139,9 @@ body {
     background: var(--bg-color-1);
     font-family: 'Space Mono', monospace;
     margin: 0;
-    padding: 0;
-    width: 100%; 
-    overflow-x: hidden; 
-
+    padding: 0; 
+    width: auto; 
+    overflow-x: hidden;
 }
 
 main {
@@ -145,7 +149,7 @@ main {
     grid-template-columns: 2fr 1fr; 
     column-gap: 10px;
     padding: 10%; 
-    padding-top: 50px; 
+    padding-top: 50px;  
 }
 /*------------Background CSS--------------------------*/
 .background-one {
