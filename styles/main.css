@@ -21,7 +21,20 @@ a {
 a:visited {
     color: var(--color-5)
 }
+/* style for button */
+.style-one {
+    background-color: rgb(58, 145, 58);
+    color: white; 
+    padding: 5px; 
+    border: none; 
+}
 
+.style-two {
+    background-color: rgb(236, 51, 51);
+    color: white; 
+    padding: 5px; 
+    border: none; 
+}
 .tags {
     display: inline-block;
     padding: 50px; 
@@ -111,6 +124,9 @@ a:visited {
     background: linear-gradient(to bottom right, rgb(151, 150, 150), rgb(0, 2, 80));
 }
 
+.display-clock {
+    padding: 15px; 
+}
 /*------------------- END OF HERO ----------------------------------------------*/
 
 body {
@@ -119,6 +135,7 @@ body {
     font-family: 'Space Mono', monospace;
     margin: 0;
     padding: 0;
+    width: 100%; 
     overflow-x: hidden; 
 
 }
@@ -221,6 +238,9 @@ footer {
 }
 
   
+.hidden-text {
+    display:none;
+}
   
 /*------------------------CONVENIENT CLASSES------------------------------------*/
 .border {

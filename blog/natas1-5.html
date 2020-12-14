@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+		<title>Natas levels 1-5</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="../styles/main.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body class="fade-in background-three">
+        <div class="hero-one hero">
+            <div class="center">
+                <p class="shadow" style="font-size: 5rem; color: white;">
+                    Ann's Blog! 
+                </p>
+                <p style="font-size: 2rem;">
+                    Where I talk about everything <br> random
+                </p>
+            </div>
+            <div class="display-clock">
+                <div id="clock">
+                    <span id="date"></span> <br>
+                    <span id="time"></span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="random-div"></div>
+        <!--USING JS ON THIS TO FIND THE NAVBAR BY ID-->
+        <div id="navbar">
+            <a href="../index.html">Home</a>
+            <a href="../pages/projects.html">Projects</a>
+            <a href="../resume/index.html">Resume</a>
+            <a href="../pages/blog.html" class="active" style="float:right">Blog</a>
+        </div>
+
+        <main>
+            <article>
+                <div class="content">
+                    <h3>Natas levels 1-5</h3>
+                    <time datetime="12-12-2020">DEC. 14, 2020</time>
+                    <a href="../tag/write-ups.html">#Write-ups</a><br> 
+                    <p>
+                        A write-up of the first couple levels of Natas, an Over the Wire Wargame. xD 
+                    </p>
+                    <hr> 
+                    <p>
+                        Back in October I participated in my first CTF (MetaCTF) and while it was really fun I realized that I know very little about what I'm doing. I did very little during the 24 hour time frame and only managed to get the team points from the OSINT section :( The next CTF I did even worse and only managed to solve a single challenge. However, even though it always seems like I do really poorly in comparision to the rest of my team, I find it really fun since I'm always learning something new. 
+                    </p>
+                    <p>
+                        Because of this, I thought it would be fun to try building up my skills before going into another CTF without knowing anything. Since I've been trying to make a personal website for quite a while, I thought it would be fun to try out a web related wargame. And back in high school I remembered completeing a couple of levels from bandit and I trying out some of the other wargames on the site (but I never completed any of them). As such here I am xD 
+                    </p>
+                    <h3>Natas 0</h3>
+                    <p>
+                        URL: <a href="http://natas0.natas.labs.overthewire.org">http://natas0.natas.labs.overthewire.org</a> <br> 
+                        Username: natas0 <br>
+                        Password: <button onclick="displaypasswd('password0', 'password0-button')" id="password0-button" class="style-one">show password</button>
+                        <div id="password0" class="hidden-text">natas0</div><br>   
+                    </p>
+                    <p>
+                        When I first saw this level I immediately thought, "oh I know how to solve this. I just need to use ctrl + shift + i" (or ctrl + u) and I was right since the password was hidden in a comment. However as I went through future levels and learned more about other tools that I had never really used before, I realized I could have also approached this problem with another solution. So while you can view the source code or inspect the element for this level (it's also probably easier that way), you can also use cURL. 
+                    </p>
+
+                    <button onclick="displayText('cURL', 'cURL-button', 'click to read the cURL solution', 'click to hide')" id="cURL-button" class="style-one">click to read the cURL solution</button><br>
+                    <div id="cURL" class="hidden-text">
+                        <p>
+                            cURL is this really cool command-line tool that lets you view/edit web pages in the terminal. It stands for Client URL and it works in both windows and linux. However you may have to go through some steps to get it working in the command prompt for windows. If so, it *may* (don't quote me on this) be easier to use Git Bash for this since it allows you to use most UNIX based commands and thus should allow you to also use cURL. 
+                        </p>
+                        <p>
+                            I haven't used cURL much before Natas but so far it's really fun (although a bit confusing at first). For the first couple levels you really don't have to use it, but in future levels it'll come in handy xD.  
+                        </p>
+                        <p>
+                            Anyways, I'll go over how we can use cURL in this level. For now, this is what you would paste into the terminal<br>
+                            <code>curl -u natas0:natas0 http://natas0.natas.labs.overthewire.org/</code><br>
+                            
+                            This will dump all the html of the site into your terminal. Although it may look like a lot (you're essentially given the source code of the website that Ctrl + U gives you), you can easily see the password by doing so. <br>
+
+                        </p> 
+                        <p>
+                            Explanation: <br>
+                            <code>-u</code> is used to specify the user and password for proxy authentication. Since natas asks us for our username and password for each level, you can use this as a way to log in. Taken from the curl man page: <br>  
+                            <code> -u, --proxy-user &lt;user:password&gt;</code>
+                        </p>
+                    </div>
+
+                    <h3>Natas 1</h3>
+                    <p>
+                        URL: <a href="http://natas1.natas.labs.overthewire.org">http://natas1.natas.labs.overthewire.org</a> <br> 
+                        Username: natas1 <br>
+                        Password: <button onclick="displaypasswd('password1', 'password1-button')" id="password1-button" class="style-one">show password</button>
+                        <div id="password1" class="hidden-text">gtVrDuiDfck831PqWsLEZy5gyDz1clto</div><br>   
+                    </p>
+                    <p>
+                        This level is extremely similar to the previous level except that "right-clicking has been blocked". However, this is not entirely true. Only right-clicking on the white background has been blocked; the rest of the page will allow you to right click. But, you don't even need to right click the page! You could just use the keyboard shortcuts Ctrl + U or Ctrl + Shift + i. And if you read the cURL solution from the previous level, you could modify that command to get the password that way.    
+                    </p>
+
+                    <h3>Natas 2</h3>
+                    <p>
+                        URL: <a href="http://natas2.natas.labs.overthewire.org">http://natas2.natas.labs.overthewire.org</a> <br> 
+                        Username: natas2 <br>
+                        Password: <button onclick="displaypasswd('password2', 'password2-button')" id="password2-button" class="style-one">show password</button>
+                        <div id="password2" class="hidden-text">ZluruAthQk7Q2MqmDeTiUij2ZvWy2mBi</div><br>   
+                    </p>
+                    <p>
+                        This next level was a little bit trickier than the last two. Let's go through the "process" of how I solved this level. 
+                        <ol>
+                            <li>
+                                Ctrl + U (to view the source code)
+                            </li>
+                            <li>
+                                found an image, navigated to files/pixel.png
+                            </li>
+                            <li>
+                                changed the size of the image to double check that there was nothing hidden in it
+                            </li>
+                            <li>
+                                tried navigating to the directory files/ 
+                            </li>
+                            <li>
+                                saw the file users.txt and tried opening it
+                            </li>
+                        </ol>
+                    </p>
+
+                    <button onclick="displayText('natas2', 'natas2-button', 'click to read a more detailed solution', 'click to hide')" id="natas2-button" class="style-one">click to read a more detailed solution</button><br>
+                    <div id="natas2" class="hidden-text">
+                        <p>
+                            So the first step was to try viewing the source code or html of the page. Doing so I noticed that there was a "hidden" image that I didn't see earlier. Since the image is only 1 pixel big, it's really difficult to notice without looking at the html of the page. 
+                        </p>
+                        <p>
+                            &lt;img&gt; (the image tag) basically embeds (or places) the image that you want to use in your site based on the link you give it (hence the use of the src attribute and not href). You can either link directly to the URL/website the image is at or to the file path to the image from the current directory. In this case, the site does the latter and because of that we can go directly to where the image is located. 
+                        </p>
+                        <p>
+                            The source of the image is at "files/pixel.png" so if you append /files.pixel.png to the end of the current website, you should be taken to where the picture is stored at. However, going there doesn't give us anything other than the picture and even then there isn't much you can do here other than maybe changing the size of the picture.
+                        </p>
+                        <button onclick="displayText('image-size', 'image-size-button', 'how to change the image size', 'click to hide')" id="image-size-button" class="style-one">how to change the image size</button><br>
+                        <div id="image-size" class="hidden-text">
+                            <p>
+                                I'll explain how you can change the image size using the developer tools since I think it's really fun to try making small changes to websites using it. 
+                            </p>
+                            <p>
+                                First use the keyboard short cut Ctrl + Shift + I or right click and chose the option to inspect the page. Make sure you're in Inspect and then click the body since we'll want to edit something within the body tag (the image). 
+                            </p>
+                            <p>
+                                On the right of the html, you should have a few options: one of which should be styles. We're going to try increasing the height of the image and this is something that is usually determined with css or within the style tag. In styles you should see the element img ruleset with a few different customizable options. <br>
+                                We can directly edit the values that we're given here by clicking what you want to change then directly typing the value that you want it to have. This can be really fun and useful since the browser will change the page according to the changes you make. You can use this when you want to avoid directly modifying the code you have at the moment. 
+                            </p>
+                            <p>
+                                Anyways, as you can tell this image doesn't really have anything special on it, but it's fun to double check anyways xD
+                            </p>
+                        </div>
+                        <p>
+                            Although the image doesn't contain the password we're looking for, it does contain a really important hint. Do you remember how we got here? We appended /files/pixel.png to the end of the site, right? Well, do you remember how I mentioned that natas uses the file path to the image from our current directory? Yes? Well because of that we know that pixel.png is stored in the folder files. 
+                        </p>
+                        <p>
+                            And how do I know that? Well, first off do you have a file in a file? Ok, well yes technically you can do that, but in most cases (probably) this doesn't happen and your files are stored in a folder for organization. 
+                        </p>
+                        <p>
+                            In any case, because we know that pixel is in this folder, why don't we try seeing if we can find out what's in this folder? We can do this by appending /files to the end of http://natas2.natas.labs.overthewire.org instead of /files/pixel.png. Doing so we're brought to "Index of /files". Looking closer to this page, we notice a few things: 
+                            <ul>
+                                <li>there's a file called users.txt</li>
+                                <li>and natas is using Apache and Port 80</li>
+                            </ul>
+                        <p>
+                        <p>
+                            From this, it's basically a given that we check out the file users.txt and doing so gives us the password for natas3! (The latter was just something I found interesting xD)
+                        </p>
+                        <p>
+                            I found it interesting how natas uses Port 80 or the default port number for a web server (or Hypertext Transfer Protocol daemon). Port 80 is used for web traffic so it makes sense that they would use it, however because it's the default there is a lot of uhhh dangerous software that would like to take over this port. So unless you want to serve web pages, port 80 probably should not be open(??) I don't fully understand this (and this has little to do with the level), but I did think that this was interesting.
+                        </p>
+                        <p>
+                            Another interesting thing is that natas is running Apache with what I assume is a linux server (what's cool is that Apache is cross platform and can be used on linux and windows servers). Apache one of the most popular web servers out there as it is opensource (so free), fast, and presumably reliable and secure. As a web server, Apache handeles requests to web pages (and serves them if found) by establishing a connection between the server and users and delivering files between them. 
+                        </p>
+
+
+
+
+
+
+                    </div>
+
+
+
+                </div>
+                <!--
+                   Can add in multiple content divs 
+               -->
+
+
+            </article>
+            <aside>
+                <h2>Hi!</h2>
+                <p>
+                    My name's Ann and I'm a first year Computer Science major at UCR. I love to eat sweets, read, and program small stuff. In my free time I'm usually either attempting to design a nice looking website or I'm playing Minecraft.
+                </p>
+                <p>
+                    You can find my old blog <a href="https://limesoda314.github.io/">here</a> <br> 
+                    Feel free to contact me with my <a href="mailto:limesoda314@gmail.com">email</a>
+                    I'm always looking for friends so don't hesitate to say hi :)
+                </p>
+            </aside>
+        </main>
+
+    <!-- CONTAINS THE JS FOR THE NAVBAR -->
+    <script defer src="../javascript/main.js"></script>
+    <script defer src="../projects/javascript/clock.js"></script>
+
+    </body>
+
+    <footer>
+        <img style="float: right; height:3em; width: auto" src="../images/limesoda.png">
+        <p>
+            Ann Miyaguchi 2020 
+        </p>
+        <div class="center">
+            <a href="mailto:limesoda314@gmail.com"><i class="fa fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/ann-marina-miyaguchi-5aa810164/"><i class="fa fa-linkedin"></i></a>
+            <a href="https://github.com/limesoda314"><i class="fa fa-github"></i></a>
+            <a href="https://twitter.com/limesoda314"><i class="fa fa-twitter"></i></a>
+        </div>
+        
+    </footer> 
+
+    </html>
