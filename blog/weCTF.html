@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+		<title>weCTF Writeup</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="../styles/main.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body class="fade-in background-three">
+        <div class="hero-one hero">
+            <div class="center">
+                <p class="shadow" style="font-size: 5rem; color: white;">
+                    Ann's Blog! 
+                </p>
+                <p style="font-size: 2rem;">
+                    Where I talk about everything <br> random
+                </p>
+            </div>
+            <div class="display-clock">
+                <div id="clock">
+                    <span id="date"></span> <br>
+                    <span id="time"></span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="random-div"></div>
+        <!--USING JS ON THIS TO FIND THE NAVBAR BY ID-->
+        <div id="navbar">
+            <a href="../index.html">Home</a>
+            <a href="../pages/projects.html">Projects</a>
+            <a href="../resume/index.html">Resume</a>
+            <a href="../pages/blog.html" class="active" style="float:right">Blog</a>
+        </div>
+
+        <main>
+            <article>
+                <div class="content">
+                    <h3>weCTF Writeup</h3>
+                    <time datetime="12-19-2020">DEC. 19, 2020</time>
+                    <a href="tag/write-ups.html">#Write-ups</a><br> 
+                    <p>
+                        A SUPER short writeup on the one challenge I solved for the weCTF. 
+                    </p>
+                    <hr> 
+                    <p>
+                        Since we just finished finals this week, I thought it would be fun to try participating in a CTF. So I checked CTFtime, saw weCTF (a 12 hour long jeopardy style web-CTF), and asked some friends if they'd be interested. I was originally just planning on asking a few friends, but seeing that we are allowed teams of "infinite" members, I tried recruiting a few more friends to join our team XD. (We ended up using the UCR ctf team name pwnLANdir$)  
+                    </p>
+                    <p>
+                        One thing I thought was really strange at first, was how we were using slack as our main mode of communication instead of discord. It was really strange and didn't really make sense until 3 hours after the CTF started when 2 more challenges were released (one of them involved a slack bot). 
+                    </p>
+                    <p>
+                        During this CTF I only really solved one challenge but even that was solved with help from one of my teammates... and also he had found the flag at the very beginning so I contributed none once again :(
+                    </p>
+                    <p>
+                        But anyhow, the solution. The problem was called <i>Red Team</i> and we were told that there was a hidden subdomain that we needed to find. We were allowed to use subdomain scanners and by using this <a href="https://pentest-tools.com/information-gathering/find-subdomains-of-domain">site</a> , I was able to find the subdomain docs as well as ns1. My teammate however used a different subdomain scanner and was able to find the subdomain that led directly to the flag. However, after asking the organizers about this a few hours later we found out that we were supposed to find the solution using the subdomain docs. 
+                    </p>
+                    <p>
+                        The subdomain docs led to an index page that included a docs and logs text file. The docs.txt file included the "company website" which was lookingglassv1.shoustinycompany.cf. The logs.txt file talked about how "Eddie started the process following RFC 5936" and a few other things that didn't make much sense to me. But it did mention "transfer NS records to our looking glass server" (161.35.126.226:53) and going there brings us to the same page as lookingglassv1.shoustinycompany.cf and that site gives us two options, to use the linux commands dig or ip. 
+                    </p>
+                    <p>
+                        I was stuck on this challenge for a really long time :( however, my teammate after looking at it again realized that we needed to use the nameserver and after a quick google search found the command that worked <code>dig @ns1.shoustinycompany.cf lookingglassv1.shoustinycompany.cf axfr</code>. With that command we were able to find all the subdomains including the really secret one. 
+                    </p>
+                   
+
+
+                    
+
+
+
+                </div>
+                <!--
+                   Can add in multiple content divs 
+               -->
+
+
+            </article>
+            <aside>
+                <h2>Hi!</h2>
+                <p>
+                    My name's Ann and I'm a first year Computer Science major at UCR. I love to eat sweets, read, and program small stuff. In my free time I'm usually either attempting to design a nice looking website or I'm playing Minecraft.
+                </p>
+                <p>
+                    You can find my old blog <a href="https://limesoda314.github.io/">here</a> <br> 
+                    Feel free to contact me with my <a href="mailto:limesoda314@gmail.com">email</a>
+                    I'm always looking for friends so don't hesitate to say hi :)
+                </p>
+            </aside>
+        </main>
+
+    <!-- CONTAINS THE JS FOR THE NAVBAR -->
+    <script defer src="../javascript/main.js"></script>
+    <script defer src="../projects/javascript/clock.js"></script>
+
+    </body>
+
+    <footer>
+        <img style="float: right; height:3em; width: auto" src="../images/limesoda.png">
+        <p>
+            Ann Miyaguchi 2020 
+        </p>
+        <div class="center">
+            <a href="mailto:limesoda314@gmail.com"><i class="fa fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/ann-marina-miyaguchi-5aa810164/"><i class="fa fa-linkedin"></i></a>
+            <a href="https://github.com/limesoda314"><i class="fa fa-github"></i></a>
+            <a href="https://twitter.com/limesoda314"><i class="fa fa-twitter"></i></a>
+        </div>
+        
+    </footer> 
+
+    </html>
