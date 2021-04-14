@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+		<title>Le Résistance Review</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="../styles/main.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body class="fade-in background-three">
+        <div class="hero-one hero">
+            <div class="center">
+                <p class="shadow" style="font-size: 5rem; color: white;">
+                    Ann's Blog! 
+                </p>
+                <p style="font-size: 2rem;">
+                    Where I talk about everything <br> random
+                </p>
+            </div>
+            <div class="display-clock">
+                <div id="clock">
+                    <span id="date"></span> <br>
+                    <span id="time"></span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="random-div"></div>
+        <!--USING JS ON THIS TO FIND THE NAVBAR BY ID-->
+        <div id="navbar">
+            <a href="../index.html">Home</a>
+            <a href="../pages/projects.html">Projects</a>
+            <a href="../resume/index.html">Resume</a>
+            <a href="../pages/blog.html" class="active" style="float:right">Blog</a>
+        </div>
+
+        <main>
+            <article>
+                <div class="content">
+                    <h3>Typora Margins</h3>
+                    <time datetime="04-13-2021">APR. 13, 2021</time>
+                    <a href="../tags/notes.html">#Notes</a><br> 
+
+                    <p><span>A “quick” guide on how to change the margins for Typora </span></p>
+                    <p>
+                        <span>
+                            Hello! It&#39;s been a while xD I&#39;ve been busy with school work for the past couple months and as such sort of put everything else on hold :( Anyhow! Typora! If you use markdown editors like I do for everything from notes to lab reports, then you&#39;ve probably heard of Typora. It&#39;s such the convenient markdown editor. You can use latex in it for math equations and it automatically renders everything (my favorite thing about it xD). You can also see how many words you’ve typed, create tables, export it as a pdf or word document (plus a lot more), and best of all paste snips directly into Typora without having to save those images someplace on your computer. (Sooo convenient)
+                        </span>
+                    </p>
+                    
+                    <p>
+                        <span>
+                            There are some downsides to Typora though. For one it’s definitely not collaborative. So if you wanted to use markdown with someone else then this is not the app for you. Another thing is that it’s an app, so if you wanted to access everything from online... well you can’t. For me that’s fine, great really because I like how quick it is to make a document + it doesn’t depend on internet connect (a concern of mine during the winter quarter). 
+                        </span>
+                        </p>
+                    <p>
+                        <span>However, the one thing that I really found so dreadfully annoying about Typora was the margins when you exported your files as a pdf. It was always so frustrating how the top and bottom margins were so small. Half the time if I was really picky about formatting I&#39;d have to export my markdown file to Word and then add in the page breaks, but that would always mess up the look. 
+
+                        </span>
+                    </p>
+                    <p>
+                        <span>I know it’s a quick fix, but I finally got around to looking into how to add page breaks as well as how to fix the margins when you print the file. Anyhow! It&#39;s really simple. All you have to do is go to your favorite theme and make a couple edits to the css file. It&#39;s not going to do much, unless you really like using </span><code>&lt;hr&gt;</code><span> tags... In which case my condolences, this might not be the solution for you xD. 
+
+                        </span>
+                    </p>
+                    <p>
+                        <span>The </span><code>&lt;hr&gt;</code><span> tags are going to have to say bye bye. That’s because this solution makes use of them as page breaks. So if you know you want a page break at a specific place, you can use </span><code>&lt;hr&gt;</code><span>. It’s super convenient!!</span>
+                    </p>
+                    <p>
+                        <span>I also changed the top and bottom margins of the page on print to be about 1 inch (25mm). It’s so nice now. I can look at my pdf’s and it doesn’t feel like something is off about it. Anyways, just stick this someplace in the css of your favorite theme and it should fix the printing issues unless of course you have something that’s a lot more serious than what this fixes xD </span>
+                    </p>
+                    <p>
+                        <code>
+                            @media print, (overflow-block: paged) or (overflow-block: optional-paged) {  
+                                
+                                hr  
+                            
+                                {    
+                            
+                                    page-break-after: always; /* CSS 2 */         
+                            
+                                    break-after: region; /* CSS 3+ */    
+                            
+                                    /* minimal layout disruption: */    
+                            
+                                    height: 0.1mm; visibility: hidden;  
+                            
+                                }    
+                            
+                                @page {    
+                            
+                                    margin-top: 25mm;    margin-bottom: 25mm;     
+                            
+                                }     
+                            
+                            }
+                        </code>
+                    </p>
+                    
+                </div>
+                <!--
+                   Can add in multiple content divs 
+               -->
+
+
+            </article>
+            <aside>
+                <h2>Hi!</h2>
+                <p>
+                    My name's Ann and I'm a first year Computer Science major at UCR. I love to eat sweets, read, and program small stuff. In my free time I'm usually either attempting to design a nice looking website or I'm playing Minecraft.
+                </p>
+                <p>
+                    You can find my old blog <a href="https://limesoda314.github.io/">here</a> <br> 
+                    Feel free to contact me with my <a href="mailto:limesoda314@gmail.com">email</a>
+                    I'm always looking for friends so don't hesitate to say hi :)
+                </p>
+            </aside>
+        </main>
+
+    <!-- CONTAINS THE JS FOR THE NAVBAR -->
+    <script defer src="../javascript/main.js"></script>
+    <script defer src="../projects/javascript/clock.js"></script>
+
+    </body>
+
+    <footer>
+        <img style="float: right; height:3em; width: auto" src="../images/limesoda.png">
+        <p>
+            Ann Miyaguchi 2020 
+        </p>
+        <div class="center">
+            <a href="mailto:limesoda314@gmail.com"><i class="fa fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/ann-marina-miyaguchi-5aa810164/"><i class="fa fa-linkedin"></i></a>
+            <a href="https://github.com/limesoda314"><i class="fa fa-github"></i></a>
+            <a href="https://twitter.com/limesoda314"><i class="fa fa-twitter"></i></a>
+        </div>
+        
+    </footer> 
+
+    </html>
